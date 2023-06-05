@@ -1,7 +1,7 @@
 import {
-  GET_HOME_DATA_REQUEST,
-  GET_HOME_DATA_SUCCESS,
-  GET_HOME_DATA_FAILED,
+  GET_FIRST_DATA_REQUEST,
+  GET_FIRST_DATA_SUCCESS,
+  GET_FIRST_DATA_FAILED,
 } from "./actiontypes";
 
 const initState = {
@@ -13,17 +13,17 @@ const initState = {
 
 export default (state = initState, action) => {
   switch (action.type) {
-    case GET_HOME_DATA_REQUEST:
+    case GET_FIRST_DATA_REQUEST:
       state = { ...state, loading: true };
       break;
-    case GET_HOME_DATA_SUCCESS:
+    case GET_FIRST_DATA_SUCCESS:
       state = {
         ...state,
         loading: false,
-        homePageData: action.payload,
+        FirstPageData: action.payload,
       };
       break;
-      case GET_HOME_DATA_FAILED:
+      case GET_FIRST_DATA_FAILED:
       state = { ...state, loading: false, error: action.payload };
       break;
     default:

@@ -1,19 +1,19 @@
 import React, {  useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getHomeDataRequest } from "../Store/First/action";
+import { getFirstDataRequest } from "../Store/First/action";
 
 function Home() {
 
 
   const dispatch = useDispatch();
 
-  const { isLoading, homePageData } = useSelector((Store) => ({
+  const { isLoading, FirstPageData } = useSelector((Store) => ({
     isLoading: Store?.First?.loading,
-    homePageData: Store?.First?.homePageData,
+    FirstPageData: Store?.First?.FirstPageData,
   }));
 
   useEffect(() => {
-    dispatch(getHomeDataRequest());
+    dispatch(getFirstDataRequest());
   }, []);
 
   return (
@@ -23,10 +23,10 @@ function Home() {
           isLoading ? "loading" : <div className="my-5">
             <h1 className="text-2xl font-medium text-center">Home</h1>
             <div className="mt-5">
-              {homePageData?.map((item, index) => (
-                <div key={index} className="flex gap-2 items-center justify-center">
-                  <p className="font-medium">{item.id}.</p>
-                  <p className="text-center">{item.title}</p>
+              {FirstPageData?.map((item, index) => (
+                <div key={index} className="flex">
+                  <p className="font-medium">{item.id}.</p>&nbsp;&nbsp;
+                  <p className="text-center">{item.body}</p>
                 </div>
               ))}
             </div>

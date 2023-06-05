@@ -1,20 +1,20 @@
  import {
-    GET_HOME_DATA_REQUEST,
-    GET_HOME_DATA_SUCCESS,
-    GET_HOME_DATA_FAILED,
+    GET_FIRST_DATA_REQUEST,
+    GET_FIRST_DATA_SUCCESS,
+    GET_FIRST_DATA_FAILED,
   } from "./actiontypes";
   
-  export const getHomeDataRequest = (payload) => ({
-    type: GET_HOME_DATA_REQUEST,
+  export const getFirstDataRequest = (payload) => ({
+    type: GET_FIRST_DATA_REQUEST,
     payload,
   });
   
-  export const getHomeDataSuccess = (data) => ({
-    type: GET_HOME_DATA_SUCCESS,
+  export const getFirstDataSuccess = (data) => ({
+    type: GET_FIRST_DATA_SUCCESS,
     payload: data,
   });
   
-  export const getHomeDataFailed = (error) => ({
-    type: GET_HOME_DATA_FAILED,
+  export const getFirstDataFailed = (error) => ({
+    type: GET_FIRST_DATA_FAILED,
     payload: error, 
   });
